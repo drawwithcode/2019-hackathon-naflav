@@ -23,13 +23,6 @@ function setup() {
   analyzer = new p5.Amplitude();
   analyzer.setInput(tg1Song);
 
-  //text settings
-  var myText = "click anywhere to play again";
-  textFont("Roboto Mono");
-  textAlign(CENTER);
-  textSize(10);
-  fill("#A98F8F");
-  text(myText, windowWidth / 2, 50);
 }
 
 function windowResized() {
@@ -121,12 +114,28 @@ function draw() {
   image(tg1Img, width / 2, height / 2, 0, volume / 8 + tg1Img.height / 1.5);
   pop();
 
+  //text settings
+  var myText = "click anywhere to play again";
+  textFont("Roboto Mono");
+  textAlign(CENTER);
+  textSize(20);
+  fill("white");
+  text(myText, windowWidth / 2 - 5, 45);
+
+  //undertext settings
+  var myText = "click anywhere to play again";
+  textFont("Roboto Mono");
+  textAlign(CENTER);
+  textSize(20);
+  fill("magenta");
+  text(myText, windowWidth / 2, 50);
+
 }
 
 function mousePressed() {
-  if (!song.isPlaying()) {
-    song.play();
+  if (!tg1Song.isPlaying()) {
+    tg1Song.play();
   } else {
-    song.pause();
+    tg1Song.pause();
   }
 }
