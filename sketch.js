@@ -7,7 +7,7 @@ var spaceImg;
 
 function preload() {
   tg1Song = loadSound("./TG1_new.mp3");
-  tg1Img = loadImage("./tg11.png");
+  tg1Img = loadImage("./tg1glitchy.png");
   earthImg = loadImage("./earth1.png");
       earth2Img = loadImage("./earth2.png");
   marsImg = loadImage("./mars1.png");
@@ -22,6 +22,14 @@ function setup() {
   tg1Song.play();
   analyzer = new p5.Amplitude();
   analyzer.setInput(tg1Song);
+
+  //text settings
+  var myText = "click anywhere to play again";
+  textFont("Roboto Mono");
+  textAlign(CENTER);
+  textSize(10);
+  fill("#A98F8F");
+  text(myText, windowWidth / 2, 50);
 }
 
 function windowResized() {
@@ -40,7 +48,7 @@ function draw() {
   //earth image
   push();
   imageMode(CENTER);
-  image(earthImg, width / 3 - 300, height / 3 + 50, volume / 8 + earthImg.height / 3, 0);
+  image(earthImg, width / 3 - 300, height / 3 + 50, volume / 6 + earthImg.height / 3, 0);
   pop();
 
   //saturn image
@@ -52,19 +60,19 @@ function draw() {
   //mars image
   push();
   imageMode(CENTER);
-  image(marsImg, width / 2, height / 2 + 300, volume / 8 + marsImg.height / 1.5, 0);
+  image(marsImg, width / 2, height / 2 + 300, volume / 5 + marsImg.height / 1.5, 0);
   pop();
 
   //smaller versions
   //mars2 image
   push();
   imageMode(CENTER);
-  image(mars2Img, width / 2 + 100, height / 3 - 130, volume / 8 + earthImg.height / 2, 0);
+  image(mars2Img, width / 2 , height / 3 - 130, volume / 8 + earthImg.height / 2, 0);
   pop();
   //earth2 image
   push();
   imageMode(CENTER);
-  image(earth2Img, width / 2 + 500, height / 3 + 450, 0, volume / 8 + saturnImg.height / 1.5);
+  image(earth2Img, width / 2 + 500, height / 3 + 450, 0, volume / 5 + saturnImg.height / 1.5);
   pop();
   //saturn2 image
   push();
@@ -82,6 +90,10 @@ function draw() {
   ellipse(width / 2 - 300, height / 2 + 80, volume / 170)
   ellipse(width / 2 + 200, height / 2 - 60, volume / 100)
 
+  ellipse(width / 2 + 200, height / 2 + 50, volume / 130)
+  ellipse(width / 2 + 300, height / 2 - 80, volume / 170)
+  ellipse(width / 2 - 200, height / 2 + 60, volume / 100)
+
   ellipse(width / 2 - 100, height / 2 - 30, volume / 150)
   ellipse(width / 2 - 500, height / 2 + 70, volume / 170)
   ellipse(width / 2 + 420, height / 2 - 100, volume / 100)
@@ -89,6 +101,10 @@ function draw() {
   ellipse(width / 2 - 67, height / 2 - 140, volume / 150)
   ellipse(width / 2 - 100, height / 2 + 200, volume / 170)
   ellipse(width / 2 + 321, height / 2 - 260, volume / 100)
+
+  ellipse(width / 2 + 67, height / 2 + 140, volume / 150)
+  ellipse(width / 2 + 100, height / 2 - 200, volume / 170)
+  ellipse(width / 2 - 321, height / 2 + 260, volume / 100)
 
   ellipse(width / 2 - 507, height / 2 - 540, volume / 150)
   ellipse(width / 2 - 400, height / 2 + 300, volume / 170)
@@ -105,6 +121,12 @@ function draw() {
   image(tg1Img, width / 2, height / 2, 0, volume / 8 + tg1Img.height / 1.5);
   pop();
 
+}
 
-
+function mousePressed() {
+  if (!song.isPlaying()) {
+    song.play();
+  } else {
+    song.pause();
+  }
 }
