@@ -22,6 +22,7 @@ function setup() {
   tg1Song.play();
   analyzer = new p5.Amplitude();
   analyzer.setInput(tg1Song);
+  tg1Song.rate(2);
 
 }
 
@@ -132,6 +133,7 @@ function draw() {
 
 }
 
+//click to play function
 function mousePressed() {
   if (!tg1Song.isPlaying()) {
     tg1Song.play();
