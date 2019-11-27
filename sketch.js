@@ -9,11 +9,11 @@ function preload() {
   tg1Song = loadSound("./TG1_new.mp3");
   tg1Img = loadImage("./tg1glitchy.png");
   earthImg = loadImage("./earth1.png");
-      earth2Img = loadImage("./earth2.png");
+  earth2Img = loadImage("./earth2.png");
   marsImg = loadImage("./mars1.png");
-      mars2Img = loadImage("./mars2.png");
+  mars2Img = loadImage("./mars2.png");
   saturnImg = loadImage("./saturn1.png");
-      saturn2Img = loadImage("./saturn2.png");
+  saturn2Img = loadImage("./saturn2.png");
   spaceImg = loadImage("./space.png");
 }
 
@@ -53,14 +53,14 @@ function draw() {
   //mars image
   push();
   imageMode(CENTER);
-  image(marsImg, width / 2, height / 2 + 300, volume / 5 + marsImg.height / 1.5, 0);
+  image(marsImg, width / 2, height / 2 + 300, volume / 8 + marsImg.height / 1.5, 0);
   pop();
 
   //smaller versions
   //mars2 image
   push();
   imageMode(CENTER);
-  image(mars2Img, width / 2 , height / 3 - 130, volume / 8 + earthImg.height / 2, 0);
+  image(mars2Img, width / 2, height / 3 - 130, volume / 8 + earthImg.height / 2, 0);
   pop();
   //earth2 image
   push();
@@ -101,7 +101,7 @@ function draw() {
 
   ellipse(width / 2 - 507, height / 2 - 540, volume / 150)
   ellipse(width / 2 - 400, height / 2 + 300, volume / 170)
-  ellipse(width / 2 + 561, height / 2 - 460, volume / 100)
+  ellipse(width / 2 + 361, height / 2 + 260, volume / 100)
 
   ellipse(width / 2 - 207, height / 2 - 240, volume / 150)
   ellipse(width / 2 - 300, height / 2 + 500, volume / 170)
@@ -114,21 +114,21 @@ function draw() {
   image(tg1Img, width / 2, height / 2, 0, volume / 8 + tg1Img.height / 1.5);
   pop();
 
-  //text settings
-  var myText = "click anywhere to play again";
-  textFont("Roboto Mono");
-  textAlign(CENTER);
-  textSize(20);
-  fill("white");
-  text(myText, windowWidth / 2 - 5, 45);
-
   //undertext settings
-  var myText = "click anywhere to play again";
+  var myText = "click to play anytime";
   textFont("Roboto Mono");
   textAlign(CENTER);
   textSize(20);
   fill("magenta");
-  text(myText, windowWidth / 2, 50);
+  text(myText, windowWidth / 2, windowHeight / 2 - 140);
+
+  //text settings
+  var myText = "click to play anytime";
+  textFont("Roboto Mono");
+  textAlign(CENTER);
+  textSize(20);
+  fill("white");
+  text(myText, windowWidth / 2 - 3, windowHeight / 2 - 138);
 
 }
 
