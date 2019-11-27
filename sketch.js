@@ -115,7 +115,7 @@ function draw() {
   image(tg1Img, width / 2, height / 2, 0, volume / 8 + tg1Img.height / 1.5);
   pop();
 
-  //undertext settings
+  //under-text settings
   var myText = "click to play anytime";
   textFont("Roboto Mono");
   textAlign(CENTER);
